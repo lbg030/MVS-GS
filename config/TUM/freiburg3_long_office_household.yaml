@@ -1,0 +1,14 @@
+inherit_from: "/home/lbg030/Desktop/slam/MVS-Droid_SLAM/config/TUM/base_config.yaml"
+Dataset:
+  scene_name: fr3_office
+  dataset_path: "/home/lbg030/Documents/Dataset/Tum-RGBD/rgbd_dataset_freiburg3_long_office_household/rgb"
+  single_thread: False
+  Calibration:
+    fx: 535.4
+    fy: 539.2
+    cx: 320.1
+    cy: 247.6
+  
+mapping:
+  voxel_down: True
+  voxel_size: 0.007

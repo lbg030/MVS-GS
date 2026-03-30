@@ -1,0 +1,6 @@
+inherit_from: "/home/lbg030/Desktop/slam/MVS-Droid_SLAM/config/T&T/base_config.yaml"
+Dataset:
+  scene_name: truck
+  dataset_path: "/home/lbg030/Documents/Dataset/TankandTemples/testing/Truck/"
+  single_thread: False
+

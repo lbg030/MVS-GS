@@ -1,0 +1,6 @@
+inherit_from: "/home/lbg030/Desktop/slam/MVS-Droid_SLAM/config/aerial/base_config.yaml"
+Dataset:
+  scene_name: scenario2
+  dataset_path: "/home/lbg030/Documents/Dataset/Aeraial_Dataset/scenario2-1_images/"
+  single_thread: False
+

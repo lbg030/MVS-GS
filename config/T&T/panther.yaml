@@ -1,0 +1,14 @@
+inherit_from: "/home/lbg030/Desktop/slam/MVS-Droid_SLAM/config/T&T/base_config.yaml"
+Dataset:
+  scene_name: panther
+  dataset_path: "/home/lbg030/Documents/Dataset/TankandTemples/intermediate/Panther/images/"
+  single_thread: False
+  Calibration:
+    fx: 1665.54
+    fy: 1665.54
+    cx: 1005.67
+    cy: 533.150
+
+mapping:
+  voxel_down: True
+  voxel_size: 0.01

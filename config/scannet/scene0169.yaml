@@ -1,0 +1,7 @@
+inherit_from: "/home/lbg030/Desktop/slam/MVS-Droid_SLAM/config/scannet/base_config.yaml"
+Dataset:
+  scene_name: scannet0169
+  dataset_path: "/home/lbg030/Documents/Dataset/scannet/scans/scene0169_00/low_color"
+  single_thread: False
+  
+  

@@ -1,0 +1,11 @@
+inherit_from: "/home/lbg030/Desktop/slam/MVS-Droid_SLAM/config/TUM/base_config.yaml"
+Dataset:
+  scene_name: fr2_xyz
+  dataset_path: "/home/lbg030/Documents/Dataset/Tum-RGBD/rgbd_dataset_freiburg2_xyz/low_rgb"
+  single_thread: False
+  Calibration:
+    fx: 507.88
+    fy: 503.63
+    cx: 316.97
+    cy: 241.38
+

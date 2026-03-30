@@ -1,0 +1,13 @@
+inherit_from: "/home/lbg030/Desktop/slam/MVS-Droid_SLAM/config/T&T/base_config.yaml"
+Dataset:
+  scene_name: barn
+  dataset_path: "/home/lbg030/Documents/Dataset/TankandTemples/testing/Barn/reduced_image/"
+  single_thread: False
+mapping:
+  voxel_size: 0.01
+
+Visualize:
+  use_gui: True
+
+model_params:
+  white_background: True

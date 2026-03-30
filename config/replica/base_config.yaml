@@ -1,0 +1,105 @@
+Dataset:
+  sensor_type: 'monocular'
+  total_img_len: 2000
+  type: 'replica'
+  stride: 1
+  depth_scale: 6553.5 # for depth image in png format
+  Calibration:
+    fx: 600.0
+    fy: 600.0
+    cx: 599.5
+    cy: 339.5
+    k1: 0.0
+    k2: 0.0
+    p1: 0.0
+    p2: 0.0
+    k3: 0.0
+    width: 1200
+    height: 680
+
+model_params:
+  t0: 0
+  tmp: [5.0, 5.0 ,5.0 ,1.0]
+  weight: "weights/droid.pth"
+  resume: "weights/mvsformer.pth"
+  output_path: "output/replica"
+  white_background: False
+  data_device: "cuda:0"
+
+tracking:
+  motion_filter_thresh: 2.4
+  warm_up: 8
+  beta: 0.3
+  frontend_nms: 1
+  keyframe_thresh: 4.0
+  frontend_window: 25
+  frontend_thresh: 16.0
+  frontend_radius: 2
+  max_length: 100
+  backend_radius: 2
+  backend_nms: 3
+  backend_thresh: 22.0
+  max_age: 25
+  iters1: 4
+  iters2: 2
+  buffer: 256
+  depth_fusion_size: [384, 512]
+  image_size: [384, 512]
+
+mapping:
+  voxel_down: True
+  voxel_size: 0.005
+  point_num_thresh: 30
+  downed_img: True
+  PSNR:
+    psnr: True
+    psnr_thresh: 40
+  Filtering:
+    filter_threshold: 0.005
+    thresh_view: 2
+    thresh_disp: 0.5
+  Pyramid:
+    pyramid: True
+    pyramid_scale: [0.25, 0.5, 0.75, 1.0]
+    pyramid_term: 8
+  NVS:
+    top_k: 100
+    frame_gap: 3
+  opt_params:
+    iterations: 30000
+    position_lr_init: 0.00016
+    position_lr_final: 0.0000016
+    position_lr_delay_mult: 0.01
+    position_lr_max_steps: 30000
+    feature_lr: 0.0025
+    opacity_lr: 0.05
+    scaling_lr: 0.005
+    rotation_lr: 0.001
+    percent_dense: 0.01
+    densification_interval: 100
+    opacity_reset_interval: 3000
+    densify_from_iter: 500
+    densify_until_iter: 20000
+    densify_grad_threshold: 0.0002
+    shape_lr : 0.001
+    shape_reset_interval : 1000
+    shape_pruning_interval : 100
+    prune_shape_threshold : 0.005
+    prune_opacity_threshold : 0.005
+    shape_strngth : 0.1
+    im_laplace_scale_factor : 0.2
+    lambda_im_laplace : 0.5
+    lambda_dssim: 0.2
+    labmda_l1: 0.8
+  final_iters: 2000
+
+pipeline_params:
+  convert_SHs_python: False
+  compute_cov3D_python: False
+  debug: False
+
+Visualize:
+  disable_vis: True
+  max_iter: 30000
+  use_gui: True
+  eval_rendering: True

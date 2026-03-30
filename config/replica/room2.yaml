@@ -1,0 +1,7 @@
+inherit_from: "/home/lbg030/Desktop/slam/MVS-Droid_SLAM/config/replica/base_config.yaml"
+Dataset:
+  scene_name: room2
+  dataset_path: "/home/lbg030/Documents/Dataset/Replica/orig/Replica/room2/images"
+  pose_path: "/home/lbg030/Documents/Dataset/Replica/orig/Replica/room2/traj.txt"
+  depth_path: "/home/lbg030/Documents/Dataset/Replica/orig/Replica/room2/depths"
+  single_thread: False

@@ -1,0 +1,15 @@
+inherit_from: "/home/lbg030/Desktop/slam/MVS-Droid_SLAM/config/scannet/base_config.yaml"
+Dataset:
+  scene_name: scannet0000
+  dataset_path: "/home/lbg030/Documents/Dataset/scannet/scans/scene0000_00/low_color"
+  single_thread: False
+  stride: 2
+
+# mapping:
+#   opt_params:
+#     densify_grad_threshold: 0.0004
+#     prune_shape_threshold : 0.01
+tracking:
+#   keyframe_thresh: 6.0
+  depth_fusion_size: [256,384]
+  image_size: [256,384]
