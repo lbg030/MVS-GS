@@ -1,14 +1,45 @@
-# Online 3D Gaussian Splatting with Novel View Selection
+# MVS-GS / Online 3D Gaussian Splatting with Novel View Selection
 
-Official repository for **Online 3D Gaussian Splatting Modeling with Novel View Selection** (**arXiv:2508.14014**).  
-Paper: [arXiv](https://arxiv.org/abs/2508.14014)
+🚀 **Official repository for:**
 
-This project builds an online 3D Gaussian Splatting model from an RGB image stream with:
-- Tracking / pose estimation: DROID-SLAM
-- Online depth estimation: MVSFormer
-- Mapping / optimization: Online 3DGS with Novel View Selection (NVS)
+* *Online 3D Gaussian Splatting Modeling with Novel View Selection* (IJCAI 2025)
+* *MVS-GS: High-Quality 3D Gaussian Splatting Mapping via Online Multi-View Stereo* (IEEE Access 2025)
 
-## Installation
+👉 [Paper (arXiv)](https://arxiv.org/abs/2508.14014)
+
+---
+
+## 🔥 Overview
+
+We present an **online 3D Gaussian Splatting framework** that reconstructs a scene from an RGB image stream.
+
+The system integrates **SLAM, multi-view stereo, and neural rendering** into a unified pipeline:
+
+* Informative view selection for efficient reconstruction
+* Multi-view stereo for geometric consistency
+* Online mapping and optimization
+
+---
+
+## 🧩 Pipeline
+
+The framework consists of three main components:
+
+1. **Tracking / Pose Estimation**
+   Camera poses are estimated from RGB inputs using DROID-SLAM
+
+2. **Online Depth Estimation**
+   Multi-view consistent depth is predicted using MVSFormer
+
+3. **Mapping / Optimization**
+   Online 3D Gaussian Splatting with:
+
+   * MVS-based geometric initialization
+   * Novel view selection for efficient updates
+
+---
+
+## ⚙️ Installation
 
 ### 1) Create environment
 
@@ -20,6 +51,8 @@ conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cud
   -c pytorch -c nvidia
 ```
 
+---
+
 ### 2) Clone repository
 
 ```bash
@@ -27,11 +60,15 @@ git clone --recursive https://github.com/lbg030/MVS-Droid_SLAM.git
 cd MVS-Droid_SLAM
 ```
 
-### 3) Install Python dependencies
+---
+
+### 3) Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
+
+---
 
 ### 4) Build CUDA extensions
 
@@ -41,9 +78,11 @@ pip install ./submodules/diff-gaussian-rasterization
 pip install ./submodules/simple-knn
 ```
 
-## Download Pretrained Weights
+---
 
-### A) DROID-SLAM weight
+## 📦 Pretrained Weights
+
+### DROID-SLAM
 
 ```bash
 pip install gdown
@@ -52,61 +91,70 @@ gdown --fuzzy "https://drive.google.com/file/d/1PpqVt1H4maBa_GbPJp4NwxRsd9jk-elh
   -O weights/droid.pth
 ```
 
-### B) MVSFormer weight
+---
+
+### MVSFormer
 
 Download from:
-- https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaDJWa1VMbWtpcVByeUhfVGwyUFVTNklzODMxP2U9QmdDdU9Z&cid=8F2A92E64291951D&id=8F2A92E64291951D%216051&parId=8F2A92E64291951D%216049&o=OneUp
-
-Then place it at:
+https://onedrive.live.com/...
 
 ```bash
 mkdir -p weights
-# move downloaded checkpoint to:
+# place checkpoint at:
 # weights/mvsformer.pth
 ```
 
-## Dataset Config
+---
 
-
-
-## Quickstart
+## 🚀 Quickstart
 
 ```bash
-python demo.py --config <path_to_your_scene_config.yaml>
+python demo.py --config <path_to_config.yaml>
 ```
 
+---
 
-## Outputs
+## 📂 Outputs
 
+The system produces:
 
-## Citation
+* Reconstructed 3D Gaussian model
+* Camera trajectory
+* Depth and intermediate mapping results
+
+---
+
+## 📄 Citation
 
 If you find our work useful, please consider citing:
 
-### MVS-GS
+### MVS-GS (IEEE Access)
+
 ```bibtex
-@article{lee2025mvsgs,
-  title={MVS-GS: High-Quality 3D Gaussian Splatting Mapping via Online Multi-View Stereo},
-  author={Lee, Byeonggwon and Park, Junkyu and Truong Giang, Khang and Jo, Sungho and Song, Soohwan},
+@article{lee2025mvs,
+  title={Mvs-gs: High-quality 3d gaussian splatting mapping via online multi-view stereo},
+  author={Lee, Byeonggwon and Park, Junkyu and Giang, Khang Truong and Jo, Sungho and Song, Soohwan},
   journal={IEEE Access},
-  volume={13},
-  pages={1--13},
   year={2025},
-  doi={10.1109/ACCESS.2025.3583156}
-}
-
-
-@misc{lee2025online3dgaussiansplatting,
-      title={Online 3D Gaussian Splatting Modeling with Novel View Selection},
-      author={Byeonggwon Lee and Junkyu Park and Khang Truong Giang and Soohwan Song},
-      year={2025},
-      eprint={2508.14014},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2508.14014},
+  publisher={IEEE}
 }
 ```
 
-## License
+---
 
-See [LICENSE](LICENSE).
+### Online 3D Gaussian Splatting with Novel View Selection (IJCAI2025)
+
+```bibtex
+@article{lee2025online,
+  title={Online 3D Gaussian splatting modeling with novel view selection},
+  author={Lee, Byeonggwon and Park, Junkyu and Giang, Khang Truong and Song, Soohwan},
+  journal={arXiv preprint arXiv:2508.14014},
+  year={2025}
+}
+```
+
+---
+
+## 📜 License
+
+See [LICENSE](LICENSE)
